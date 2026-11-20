@@ -1,0 +1,15 @@
+name: mac runner check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: [self-hosted, macOS, ARM64]
+    timeout-minutes: 10
+    steps:
+      - name: host check
+        run: |
+          echo "hello from $(hostname)"
+          sw_vers
+          sleep 75
